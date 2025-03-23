@@ -13,8 +13,6 @@ import pro.ivanov.kafka.service.domain.CreateProductDto;
 import pro.ivanov.kafka.service.domain.error.ErrorMessage;
 import pro.ivanov.kafka.service.domain.error.SendMessageException;
 
-import java.time.Instant;
-
 @RestController
 @RequestMapping(value = "/product")
 @RequiredArgsConstructor
@@ -31,6 +29,6 @@ public class ProductController {
     @ExceptionHandler(SendMessageException.class)
     public ResponseEntity<ErrorMessage> exception(SendMessageException ex) {
         return ResponseEntity.internalServerError()
-                .body(new ErrorMessage(Instant.now(), ex.getMessage()));
+                .body(new ErrorMessage(ex.getTimestamp(), ex.getMessage()));
     }
 }

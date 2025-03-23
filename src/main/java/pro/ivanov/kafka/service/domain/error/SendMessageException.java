@@ -10,4 +10,9 @@ import java.time.Instant;
 public class SendMessageException extends RuntimeException {
 
     private Instant timestamp;
+
+    public SendMessageException(String message, Instant timestamp) {
+        super(message);
+        this.timestamp = timestamp;
+    }
 }

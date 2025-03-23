@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import pro.ivanov.kafka.mapper.EventMapper;
 import pro.ivanov.kafka.service.domain.CreateProductDto;
+import pro.ivanov.kafka.service.event.KafkaMessagingService;
 
 import java.util.UUID;
 
